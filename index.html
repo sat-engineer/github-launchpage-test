@@ -1,6 +1,234 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>Hello, world!</h1>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satoshi's Pizzeria - Bitcoin Pizza Day Specials</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f7931a 0%, #ff6b35 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #f7931a;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid #f7931a;
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        header p {
+            font-size: 1.2em;
+            color: #fff;
+        }
+        .bitcoin-logo {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .banner {
+            background-color: #000;
+            color: #f7931a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border: 2px solid #f7931a;
+        }
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .pizza-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pizza-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        .pizza-image {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 30px;
+            text-align: center;
+            font-size: 4em;
+        }
+        .pizza-info {
+            padding: 20px;
+        }
+        .pizza-info h3 {
+            color: #f7931a;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .pizza-info p {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        .price {
+            color: #f7931a;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .bitcoin-price {
+            color: #ff6b35;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+        .special {
+            background: linear-gradient(135deg, #f7931a 0%, #FFD700 100%);
+            padding: 15px;
+            border-radius: 5px;
+            color: #000;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #f7931a;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            border-top: 3px solid #f7931a;
+        }
+        .pizza-day-ref {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="bitcoin-logo">₿</span> Satoshi's Pizzeria <span class="bitcoin-logo">₿</span></h1>
+        <p>Where Good Pizza Meets Great Cryptocurrency</p>
+    </header>
+
+    <div class="container">
+        <div class="banner">
+            🎉 PIZZA DAY CELEBRATION (May 22nd) 🎉<br>
+            <span style="font-size: 0.9em; margin-top: 10px; display: block;">
+                Honoring the first Bitcoin pizza transaction in 2010
+            </span>
+        </div>
+
+        <div class="menu">
+            <div class="pizza-card">
+                <div class="pizza-image">🍕</div>
+                <div class="pizza-info">
+                    <h3>The Satoshi Special</h3>
+                    <p>Crispy crust with a mysterious blend of toppings that only the true founder would know.</p>
+                    <div class="price">$15.99</div>
+                    <div class="bitcoin-price">₿ 0.00042</div>
+                    <div class="special">Legendary Choice</div>
+                </div>
+            </div>
+
+            <div class="pizza-card">
+                <div class="pizza-image">🍕</div>
+                <div class="pizza-info">
+                    <h3>The Hodl</h3>
+                    <p>Hold it together! Premium mozzarella with extra cheese that keeps improving with time.</p>
+                    <div class="price">$18.99</div>
+                    <div class="bitcoin-price">₿ 0.00051</div>
+                    <div class="special">Best Value</div>
+                </div>
+            </div>
+
+            <div class="pizza-card">
+                <div class="pizza-image">🍕</div>
+                <div class="pizza-info">
+                    <h3>The Blockchain</h3>
+                    <p>Layers upon layers of toppings, each one linked to the previous in perfect harmony.</p>
+                    <div class="price">$19.99</div>
+                    <div class="bitcoin-price">₿ 0.00054</div>
+                    <div class="special">Premium</div>
+                </div>
+            </div>
+
+            <div class="pizza-card">
+                <div class="pizza-image">🍕</div>
+                <div class="pizza-info">
+                    <h3>The Decentralized</h3>
+                    <p>No single authority decides the toppings. All ingredients spread equally across the pizza.</p>
+                    <div class="price">$17.99</div>
+                    <div class="bitcoin-price">₿ 0.00048</div>
+                    <div class="special">Community Choice</div>
+                </div>
+            </div>
+
+            <div class="pizza-card">
+                <div class="pizza-image">🍕</div>
+                <div class="pizza-info">
+                    <h3>The Fork</h3>
+                    <p>A controversial classic. Choose your style: pepperoni or sausage (pick one!)</p>
+                    <div class="price">$13.99</div>
+                    <div class="bitcoin-price">₿ 0.00038</div>
+                    <div class="special">Classic</div>
+                </div>
+            </div>
+
+            <div class="pizza-card">
+                <div class="pizza-image">🍕</div>
+                <div class="pizza-info">
+                    <h3>The To The Moon</h3>
+                    <p>Reaches new heights with rocket-powered toppings and interstellar cheese coverage.</p>
+                    <div class="price">$21.99</div>
+                    <div class="bitcoin-price">₿ 0.00059</div>
+                    <div class="special">Premium +</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 40px;">
+            <h2 style="color: #f7931a; margin-bottom: 15px;">💎 Bitcoin Accepted 💎</h2>
+            <p style="color: #666; margin-bottom: 15px;">
+                We honor the legacy of May 22, 2010, when Laszlo Hanyecz paid 10,000 BTC for two Papa John's pizzas.
+            </p>
+            <p style="color: #ff6b35; font-weight: bold;">
+                Today, pay with cryptocurrency and get 15% off your order!
+            </p>
+            <div class="pizza-day-ref">
+                <em>"A man is not poor if he can still enjoy pizza"</em> - Satoshi Nakamoto (probably)
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Satoshi's Pizzeria</h3>
+        <p>🍕 Making Pizza Great Since the Genesis Block 🍕</p>
+        <p style="margin-top: 20px; font-size: 0.9em; color: #aaa;">
+            Every pizza comes with blockchain-proof-of-deliciousness
+        </p>
+        <p style="margin-top: 10px; color: #f7931a;">
+            🎉 Happy Pizza Day! 🎉
+        </p>
+    </footer>
+</body>
 </html>
