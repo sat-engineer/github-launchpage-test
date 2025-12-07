@@ -3,231 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satoshi's Pizzeria - Bitcoin Pizza Day Specials</title>
+    <title>Satoshi's Pizzeria | Bitcoin Pizza Day Specials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --bitcoin-orange: #F7931A;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent-green: #2ecc71;
+            --price-color: #ffb142;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f7931a 0%, #ff6b35 100%);
-            min-height: 100vh;
-            color: #333;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
         }
+
+        /* --- Typography --- */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+
+        /* --- Hero Section --- */
         header {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #f7931a;
-            padding: 30px 20px;
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            border-bottom: 3px solid #f7931a;
+            /* Using the image provided as a background with a dark overlay for text readability */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('Gemini_Generated_Image_1ciknw1ciknw1cik.png');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 4px solid var(--bitcoin-orange);
         }
+
         header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        header p {
-            font-size: 1.2em;
+            font-size: 3.5rem;
             color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
         }
-        .bitcoin-logo {
+
+        header .subtitle {
+            font-size: 1.2rem;
+            background-color: var(--bitcoin-orange);
+            color: #000;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
             display: inline-block;
-            margin: 0 10px;
-            font-size: 1.5em;
         }
+
+        /* --- Container --- */
         .container {
             max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
+
+        /* --- Banner --- */
         .banner {
-            background-color: #000;
-            color: #f7931a;
-            padding: 20px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 1px solid var(--bitcoin-orange);
+            color: var(--bitcoin-orange);
+            padding: 30px;
+            border-radius: 12px;
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 1.3em;
-            font-weight: bold;
-            border: 2px solid #f7931a;
+            margin-bottom: 60px;
+            box-shadow: 0 4px 20px rgba(247, 147, 26, 0.15);
         }
+        
+        .banner h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        /* --- Menu Grid --- */
+        .menu-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
         .menu {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* --- Cards --- */
+        .pizza-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pizza-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(247, 147, 26, 0.2);
+            border-color: var(--bitcoin-orange);
+        }
+
+        .pizza-image-area {
+            background: radial-gradient(circle, #2a2a2a 0%, #111 100%);
+            padding: 40px;
+            text-align: center;
+            font-size: 4rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .pizza-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pizza-info h3 {
+            color: var(--bitcoin-orange);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .pizza-info p {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        .price-fiat {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .price-btc {
+            color: var(--bitcoin-orange);
+            font-size: 0.9rem;
+            font-family: monospace;
+            opacity: 0.9;
+        }
+
+        /* --- Badges --- */
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge.legendary { background: linear-gradient(45deg, #FFD700, #FDB931); color: #000; }
+        .badge.value { background: #2ecc71; color: #fff; }
+        .badge.premium { background: #9b59b6; color: #fff; }
+        .badge.community { background: #3498db; color: #fff; }
+        .badge.classic { background: #95a5a6; color: #fff; }
+        .badge.moon { background: linear-gradient(45deg, #e74c3c, #c0392b); color: #fff; }
+
+        /* --- Promo Section --- */
+        .promo-box {
+            background: linear-gradient(to right, #1a1a1a, #252525);
+            border-left: 5px solid var(--bitcoin-orange);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
             margin-bottom: 40px;
         }
-        .pizza-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .pizza-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-        }
-        .pizza-image {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            padding: 30px;
-            text-align: center;
-            font-size: 4em;
-        }
-        .pizza-info {
-            padding: 20px;
-        }
-        .pizza-info h3 {
-            color: #f7931a;
+        
+        .promo-box h2 {
+            color: #fff;
             margin-bottom: 10px;
-            font-size: 1.5em;
         }
-        .pizza-info p {
-            color: #666;
-            margin-bottom: 10px;
-            font-size: 0.95em;
-        }
-        .price {
-            color: #f7931a;
+
+        .promo-highlight {
+            color: var(--bitcoin-orange);
             font-weight: bold;
-            font-size: 1.3em;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
-        .bitcoin-price {
-            color: #ff6b35;
-            font-size: 0.9em;
-            font-style: italic;
-        }
-        .special {
-            background: linear-gradient(135deg, #f7931a 0%, #FFD700 100%);
-            padding: 15px;
-            border-radius: 5px;
-            color: #000;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 15px;
-        }
+
+        /* --- Footer --- */
         footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #f7931a;
+            background-color: #000;
+            color: #777;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-            border-top: 3px solid #f7931a;
+            padding: 50px 20px;
+            border-top: 1px solid #333;
         }
-        .pizza-day-ref {
-            font-size: 0.85em;
-            color: #666;
-            margin-top: 10px;
+
+        footer h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .hash-id {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #444;
+            margin-top: 20px;
+        }
+
+        /* --- Mobile Tweaks --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .pizza-card { margin-bottom: 20px; }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <img src="Gemini_Generated_Image_1ciknw1ciknw1cik.png" alt="Satoshi's Pizzeria" style="max-width: 100%; height: auto; max-height: 300px;">
+        <h1>Satoshi's Pizzeria</h1>
+        <div class="subtitle">EST. GENESIS BLOCK</div>
     </header>
 
     <div class="container">
         <div class="banner">
-            🎉 PIZZA DAY CELEBRATION (May 22nd) 🎉<br>
-            <span style="font-size: 0.9em; margin-top: 10px; display: block;">
-                Honoring the first Bitcoin pizza transaction in 2010
-            </span>
+            <h2>🎉 PIZZA DAY SPECIAL (May 22nd) 🎉</h2>
+            <p>Paying tribute to the 10,000 BTC transaction that started it all.</p>
         </div>
+
+        <h2 class="menu-title">The Mining Menu</h2>
 
         <div class="menu">
             <div class="pizza-card">
-                <div class="pizza-image">🍕</div>
+                <span class="badge legendary">Legendary</span>
+                <div class="pizza-image-area">🍕</div>
                 <div class="pizza-info">
                     <h3>The Satoshi Special</h3>
-                    <p>Crispy crust with a mysterious blend of toppings that only the true founder would know.</p>
-                    <div class="price">$15.99</div>
-                    <div class="bitcoin-price">₿ 0.00042</div>
-                    <div class="special">Legendary Choice</div>
+                    <p>Crispy crust with a mysterious blend of toppings. The recipe is open source, but the taste is proprietary.</p>
+                    <div class="pricing-row">
+                        <div class="price-fiat">$15.99</div>
+                        <div class="price-btc">₿ 0.00042</div>
+                    </div>
                 </div>
             </div>
 
             <div class="pizza-card">
-                <div class="pizza-image">🍕</div>
+                <span class="badge value">Best Value</span>
+                <div class="pizza-image-area">🧀</div>
                 <div class="pizza-info">
-                    <h3>The Hodl</h3>
-                    <p>Hold it together! Premium mozzarella with extra cheese that keeps improving with time.</p>
-                    <div class="price">$18.99</div>
-                    <div class="bitcoin-price">₿ 0.00051</div>
-                    <div class="special">Best Value</div>
+                    <h3>The HODL</h3>
+                    <p>Hold it together! Premium mozzarella with extra cheese that keeps improving with time. Don't sell it, eat it.</p>
+                    <div class="pricing-row">
+                        <div class="price-fiat">$18.99</div>
+                        <div class="price-btc">₿ 0.00051</div>
+                    </div>
                 </div>
             </div>
 
             <div class="pizza-card">
-                <div class="pizza-image">🍕</div>
+                <span class="badge premium">Premium</span>
+                <div class="pizza-image-area">🔗</div>
                 <div class="pizza-info">
                     <h3>The Blockchain</h3>
-                    <p>Layers upon layers of toppings, each one linked to the previous in perfect harmony.</p>
-                    <div class="price">$19.99</div>
-                    <div class="bitcoin-price">₿ 0.00054</div>
-                    <div class="special">Premium</div>
+                    <p>Layers upon layers of pepperoni and peppers, each one linked to the previous in perfect harmony.</p>
+                    <div class="pricing-row">
+                        <div class="price-fiat">$19.99</div>
+                        <div class="price-btc">₿ 0.00054</div>
+                    </div>
                 </div>
             </div>
 
             <div class="pizza-card">
-                <div class="pizza-image">🍕</div>
+                <span class="badge community">Fan Fav</span>
+                <div class="pizza-image-area">🌐</div>
                 <div class="pizza-info">
                     <h3>The Decentralized</h3>
-                    <p>No single authority decides the toppings. All ingredients spread equally across the pizza.</p>
-                    <div class="price">$17.99</div>
-                    <div class="bitcoin-price">₿ 0.00048</div>
-                    <div class="special">Community Choice</div>
+                    <p>No single authority decides the toppings. Ingredients are distributed evenly across the network (crust).</p>
+                    <div class="pricing-row">
+                        <div class="price-fiat">$17.99</div>
+                        <div class="price-btc">₿ 0.00048</div>
+                    </div>
                 </div>
             </div>
 
             <div class="pizza-card">
-                <div class="pizza-image">🍕</div>
+                <span class="badge classic">Classic</span>
+                <div class="pizza-image-area">🍴</div>
                 <div class="pizza-info">
-                    <h3>The Fork</h3>
-                    <p>A controversial classic. Choose your style: pepperoni or sausage (pick one!)</p>
-                    <div class="price">$13.99</div>
-                    <div class="bitcoin-price">₿ 0.00038</div>
-                    <div class="special">Classic</div>
+                    <h3>The Hard Fork</h3>
+                    <p>A controversial classic. Half pepperoni, half sausage. You have to choose a side (or eat both).</p>
+                    <div class="pricing-row">
+                        <div class="price-fiat">$13.99</div>
+                        <div class="price-btc">₿ 0.00038</div>
+                    </div>
                 </div>
             </div>
 
             <div class="pizza-card">
-                <div class="pizza-image">🍕</div>
+                <span class="badge moon">Hot Item</span>
+                <div class="pizza-image-area">🚀</div>
                 <div class="pizza-info">
-                    <h3>The To The Moon</h3>
-                    <p>Reaches new heights with rocket-powered toppings and interstellar cheese coverage.</p>
-                    <div class="price">$21.99</div>
-                    <div class="bitcoin-price">₿ 0.00059</div>
-                    <div class="special">Premium +</div>
+                    <h3>To The Moon</h3>
+                    <p>Spicy jalapeños and rocket-fuel hot sauce. This pie will take your tastebuds to new all-time highs.</p>
+                    <div class="pricing-row">
+                        <div class="price-fiat">$21.99</div>
+                        <div class="price-btc">₿ 0.00059</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div style="background: white; padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 40px;">
-            <h2 style="color: #f7931a; margin-bottom: 15px;">💎 Bitcoin Accepted 💎</h2>
-            <p style="color: #666; margin-bottom: 15px;">
-                We honor the legacy of May 22, 2010, when Laszlo Hanyecz paid 10,000 BTC for two Papa John's pizzas.
+        <div class="promo-box">
+            <h2 style="color: var(--bitcoin-orange);">💎 Bitcoin Accepted Here 💎</h2>
+            <p style="color: #ccc; margin-bottom: 15px;">
+                We honor the legacy of Laszlo Hanyecz.
             </p>
-            <p style="color: #ff6b35; font-weight: bold;">
-                Today, pay with cryptocurrency and get 15% off your order!
+            <p class="promo-highlight">
+                Pay with cryptocurrency and get 15% off your order!
             </p>
-            <div class="pizza-day-ref">
-                <em>"A man is not poor if he can still enjoy pizza"</em> - Satoshi Nakamoto (probably)
-            </div>
+            <p style="margin-top: 15px; font-style: italic; font-size: 0.9rem;">
+                "A man is not poor if he can still enjoy pizza" - Satoshi Nakamoto (probably)
+            </p>
         </div>
     </div>
 
     <footer>
         <h3>Satoshi's Pizzeria</h3>
-        <p>🍕 Making Pizza Great Since the Genesis Block 🍕</p>
-        <p style="margin-top: 20px; font-size: 0.9em; color: #aaa;">
-            Every pizza comes with blockchain-proof-of-deliciousness
-        </p>
-        <p style="margin-top: 10px; color: #f7931a;">
-            🎉 Happy Pizza Day! 🎉
+        <p>🍕 Making Pizza Great Since 2009 🍕</p>
+        <div class="hash-id">
+            Hash: 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+        </div>
+        <p style="margin-top: 20px; color: var(--bitcoin-orange); font-weight: bold;">
+            Happy Pizza Day!
         </p>
     </footer>
+
 </body>
 </html>
